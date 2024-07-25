@@ -8,9 +8,11 @@ import java.util.ArrayList;
 public class SongDAO {
 
 	static Statement statement = ConnectionDB.getConnection();
-	static ArrayList<Song> songs = new ArrayList<Song>();
+	static ArrayList<Song> songs;
 	
 	public static ArrayList<Song> getAllSongs() throws SQLException {
+		
+		songs = new ArrayList<Song>();
 		
 		ResultSet resultSet = statement.executeQuery("SELECT * FROM songs");
 		
@@ -67,6 +69,28 @@ public class SongDAO {
 		
 		return result;
 		
+	}
+	
+	public static void updateSong(Song song) throws SQLException {
+		
+		statement.executeQuery("UPDATE `songs` SET "
+				+ "`songName`='"+song.getSongName()+"',"
+				+ "`songAuthor`='"+song.getSongAuthor()+"',"
+				+ "`songAlbum`='"+song.getSongAlbum()+"',"
+				+ "`songCover`='"+song.getSongCover()+"',"
+				+ "`songAudio`='"+song.getSongAudio()+"' "
+				+ "WHERE `songId`="+song.getSongId());
+	}
+	
+	public static void addSong(Song song) throws SQLException {
+		
+		statement.executeQuery("INSERT INTO `songs`"
+				+ "(`songName`, `songAuthor`, `songAlbum`, `songCover`, `songAudio`) VALUES ('"
+				+song.getSongName()+"','"
+				+song.getSongAuthor()+"','"
+				+song.getSongAlbum()+"','"
+				+song.getSongCover()+"','"
+				+song.getSongAudio()+"')");
 	}
 	
 	

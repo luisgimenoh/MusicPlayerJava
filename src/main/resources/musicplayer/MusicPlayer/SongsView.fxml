@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicplayer.MusicPlayer.controller.SongsController">
    <children>
-      <TableView fx:id="songsTable" layoutX="250.0" layoutY="137.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.leftAnchor="50.0">
+      <TableView fx:id="songsTable" layoutX="250.0" layoutY="137.0" prefHeight="500.0" prefWidth="1000.0" AnchorPane.leftAnchor="50.0">
         <columns>
           <TableColumn fx:id="songCoverColumn" prefWidth="160.0" text="COVER" />
             <TableColumn fx:id="songNameColumn" prefWidth="160.0" text="SONG" />
@@ -34,5 +35,6 @@
             <Font name="Bauhaus 93" size="32.0" />
          </font>
       </Text>
+      <Button fx:id="addSongBtn" layoutX="512.0" layoutY="699.0" mnemonicParsing="false" onAction="#switchToSongsDetailView" text="ADD SONG" />
    </children>
 </AnchorPane>

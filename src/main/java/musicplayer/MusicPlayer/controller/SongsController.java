@@ -1,5 +1,6 @@
 package musicplayer.MusicPlayer.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Callback;
+import musicplayer.MusicPlayer.App;
 import musicplayer.MusicPlayer.model.Audio;
 import musicplayer.MusicPlayer.model.Song;
 import musicplayer.MusicPlayer.model.SongDAO;
@@ -256,5 +258,10 @@ public class SongsController {
 			}
 		}; 
 	}
+	
+	@FXML
+    private void switchToSongsDetailView() throws IOException {
+        App.setRoot("SongsDetailView");
+    }
 		
 }

@@ -18,6 +18,20 @@ public class Song {
 		this.songAudio = audio;
 	}
 	
+	public Song(String name, String author, String album, String cover, String audio) {
+		this.songName = name;
+		this.songAuthor = author;
+		this.songAlbum = album;
+		this.songCover = cover;
+		this.songAudio = audio;
+	}
+	
+	public Song(String name, String author, String album) {//borrar
+		this.songName = name;
+		this.songAuthor = author;
+		this.songAlbum = album;
+	}
+	
 	public int getSongId() {
 		return songId;
 	}
